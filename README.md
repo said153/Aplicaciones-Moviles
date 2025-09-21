@@ -77,6 +77,7 @@ La aplicación incluye los siguientes **Fragments**:
 </p>
 
 ### VIDEO DEL FUNCIONAMIENTO 
+https://github.com/user-attachments/assets/1f17c648-b5dd-4833-b414-4eec12873b10
 
 
 
