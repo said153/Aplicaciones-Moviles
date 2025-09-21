@@ -79,5 +79,22 @@ La aplicación incluye los siguientes **Fragments**:
 ### VIDEO DEL FUNCIONAMIENTO 
 https://github.com/user-attachments/assets/1f17c648-b5dd-4833-b414-4eec12873b10
 
+## 🛠️ Instrucciones de uso
+
+1. **Descargar o clonar el repositorio** en Android Studio.  
+
+2. **Abrir el proyecto** y esperar a que termine la sincronización de Gradle.  
+
+3. **Conectar un dispositivo Android** o configurar un emulador.  
+
+4. **Ejecutar la aplicación** usando el botón **Run**.  
+
+5. **Explorar la aplicación**: La **MainActivity** permite acceder a los distintos Fragments:
+
+   - **Pantalla 1:** Campos de texto (`EditText`)  
+   - **Pantalla 2:** Botones (`Button`, `ImageButton`, `FloatingActionButton`)  
+   - **Pantalla 3:** Elementos de selección (`CheckBox`, `RadioButton`, `Switch`)  
+   - **Pantalla 4:** Listas (`RecyclerView` / `ListView`)  
+   - **Pantalla 5:** Elementos de información (`TextView`, `ImageView`, `ProgressBar`)  
 
 
