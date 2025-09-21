@@ -1,32 +1,12 @@
-# 📱 Práctica 1 - "Instalación y Funcionamiento de los Entornos Móviles"
+# 📱 Práctica 1 - "Implementación de Múltiples Pantallas en Android"
 
 ## 📌 Descripción
-Esta práctica se divide en **dos fases principales**:
+Esta práctica consiste en desarrollar una aplicación móvil en **Kotlin** que demuestra la gestión de múltiples pantallas usando **Activities** y **Fragments**.
 
-### 🔧 Primera fase: Configuración del entorno
-- Instalación de herramientas complementarias: **JDK, Maven, Git, Docker y Node.js**.
-- Creación y vinculación de repositorios en **GitHub** para almacenar los proyectos.
+La app incluye **navegación entre distintos Fragments**, donde cada uno muestra un tipo diferente de elemento de interfaz de usuario. Esto permite observar cómo se estructuran, organizan y conectan los componentes visuales dentro de una aplicación Android.
 
-### 🚀 Segunda fase: Implementación de la aplicación móvil
-- Desarrollo de una aplicación móvil en **Kotlin** que demuestra la gestión de múltiples pantallas usando **Activities** y **Fragments**.
-- Construcción de la app con navegación entre **Activities** y **Fragments**, donde cada uno representa un componente de la interfaz de usuario.  
-  👉 Esto permite observar la estructura, organización y conexión de los diferentes elementos visuales dentro de la aplicación.
-
-## 🛠️ Primera fase: Configuración del Entorno
-- **Java Development Kit (JDK)** → Instalación de Amazon Corretto o algún otro JDK.
-- **Maven** → Para construcción de proyectos.
-- **Git y GitHub** → Control de versiones y gestión de repositorios.
-- **Docker** → Gestión de bases de datos.
-- **Node.js** → Entorno de ejecución de JavaScript.
-
-### Evidencia
-Se observa en la imagen la platilla que te da por defecto al crear un nuevo proyecto con flutter
-<p align="center">
-  <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/b53d6207-262b-49f0-8fe8-daf7c608ccc1" />
-</p>
-
-## 📲 Segunda fase: Desarrollo de la Aplicación
-La aplicación muestra diferentes elementos de UI, organizados en **Fragments** y accesibles mediante navegación desde la **MainActivity**:
+## 📲 Desarrollo de la Aplicación
+La aplicación incluye los siguientes **Fragments**:
 
 1. **Pantalla 1: Campos de texto** → `EditText`
 2. **Pantalla 2: Botones** → `Button`, `ImageButton`, `FloatingActionButton`
@@ -35,7 +15,7 @@ La aplicación muestra diferentes elementos de UI, organizados en **Fragments** 
 5. **Pantalla 5: Elementos de información** → `TextView`, `ImageView`, `ProgressBar`
 
 ## 🧭 Navegación
-- Se implementó un **menú de navegación** en la MainActivity para acceder a cada Fragment.
+- Se implementó un **menú de navegación** en la **MainActivity** para acceder a cada Fragment.
 - Cada Fragment incluye:
   - 📝 **Título descriptivo**
   - 🎨 **Ejemplos visuales funcionando**
