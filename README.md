@@ -7,6 +7,12 @@ Esta práctica se divide en **dos fases principales**:
 - Instalación de herramientas complementarias: **JDK, Maven, Git, Docker y Node.js**.
 - Creación y vinculación de repositorios en **GitHub** para almacenar los proyectos.
 
+### Evidencia
+Se observa en la imagen la platilla que te da por defecto al crear un nuevo proyecto con flutter
+<p align="center">
+  <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/b53d6207-262b-49f0-8fe8-daf7c608ccc1" />
+</p>
+
 ### 🚀 Segunda fase: Implementación de la aplicación móvil
 - Desarrollo de una aplicación móvil en **Kotlin** que demuestra la gestión de múltiples pantallas usando **Activities** y **Fragments**.
 - Construcción de la app con navegación entre **Activities** y **Fragments**, donde cada uno representa un componente de la interfaz de usuario.  
