@@ -97,4 +97,18 @@ https://github.com/user-attachments/assets/1f17c648-b5dd-4833-b414-4eec12873b10
    - **Pantalla 4:** Listas (`RecyclerView` / `ListView`)  
    - **Pantalla 5:** Elementos de información (`TextView`, `ImageView`, `ProgressBar`)  
 
+## ⚠️ Dificultades y cómo se resolvieron
+
+Durante el desarrollo de la aplicación se presentaron algunas dificultades:
+
+### 1. Navegación entre Fragments y Activities
+- **Problema:** Inicialmente, algunos botones no abrían el Fragment correcto o la aplicación se cerraba inesperadamente al cambiar de pantalla.  
+- **Solución:** Se revisó la implementación de `FragmentTransaction` y se aseguraron los **IDs correctos** en el menú de navegación.
+### 2. Compatibilidad de layouts con distintos tamaños de pantalla
+- **Problema:** Algunos elementos se desbordaban o se veían desalineados en dispositivos con resoluciones diferentes.  
+- **Solución:** Se utilizaron **ConstraintLayout** y **ScrollView** para mantener los elementos correctamente alineados y responsivos.
+
+## 💡 Hallazgos
+
+- La separación de responsabilidades entre **Activities** y **Fragments** facilita la gestión de la interfaz y la navegación.
 
