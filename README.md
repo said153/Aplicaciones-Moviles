@@ -69,11 +69,13 @@ La aplicación incluye los siguientes **Fragments**:
 </p>
 
 <p align="center">
-  <img width="360" height="800" src="https://github.com/user-attachments/assets/58b57f8a-0fde-4756-9c5a-5e45fa826c0a" />
+  <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/45846dc7-a01c-4742-ad23-f9bb95ee1f00" />
+
 </p>
 
 <p align="center">
-  <img width="360" height="800" src="https://github.com/user-attachments/assets/3f357d96-5452-4b71-a6bd-9ab7f741cdc5" />
+  <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/283eec92-54ef-46dd-bdd1-0a860dd447f9" />
+
 </p>
 
 ### VIDEO DEL FUNCIONAMIENTO 
