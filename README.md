@@ -70,10 +70,6 @@ La aplicación incluye los siguientes **Fragments**:
 </p>
 
 <p align="center">
-  <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/283eec92-54ef-46dd-bdd1-0a860dd447f9" />
-</p>
-
-<p align="center">
   <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/0afc92ed-509f-4c3f-8522-3baa389a79b5" />
 </p>
 
