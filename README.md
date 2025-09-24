@@ -65,17 +65,16 @@ La aplicación incluye los siguientes **Fragments**:
 </p>
 
 <p align="center">
-  <img width="360" height="800" src="https://github.com/user-attachments/assets/88df26c0-2b65-401b-a515-f08da7a56e86" />
-</p>
-
-<p align="center">
   <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/45846dc7-a01c-4742-ad23-f9bb95ee1f00" />
 
 </p>
 
 <p align="center">
   <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/283eec92-54ef-46dd-bdd1-0a860dd447f9" />
+</p>
 
+<p align="center">
+  <img width="360" height="800" alt="image" src="https://github.com/user-attachments/assets/0afc92ed-509f-4c3f-8522-3baa389a79b5" />
 </p>
 
 ### VIDEO DEL FUNCIONAMIENTO 
