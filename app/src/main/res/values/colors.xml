@@ -10,7 +10,8 @@
     <color name="purple_700">#3700B3</color>
     <color name="teal_200">#03DAC5</color>
     <color name="gray">#9E9E9E</color>
-
+    <color name="cardBackground">#FFFFFF</color>
+    <color name="textColorPrimary">#000000</color>
     <!-- Colores específicos de tu app -->
     <color name="textSecondary">#757575</color> <!-- gris oscuro para textos secundarios -->
     <color name="backgroundLight">#FFFFFF</color> <!-- fondo claro -->

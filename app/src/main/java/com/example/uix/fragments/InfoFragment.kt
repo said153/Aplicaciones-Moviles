@@ -1,5 +1,6 @@
 package com.example.uix.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,8 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.uix.MainActivity
+import com.example.uix.NewActivity
 import com.example.uix.R
 import com.example.uix.databinding.FragmentInfoBinding
+
 
 class InfoFragment : Fragment() {
 
@@ -42,130 +45,68 @@ class InfoFragment : Fragment() {
         // TextView dinámico que cambia con el texto compartido
         binding.tvDynamic.text = "Texto actual: ${MainActivity.sharedText}"
 
-        // ImageView con click listener
+        // **AQUÍ ESTÁ LA CORRECCIÓN**
+        // ImageView con click listener que inicia la nueva actividad
         binding.ivClickable.setOnClickListener {
-            // Cambiar imagen al hacer click
-            val currentDrawable = binding.ivClickable.drawable
-            if (currentDrawable.constantState == resources.getDrawable(R.drawable.ic_star_outline).constantState) {
-                binding.ivClickable.setImageResource(R.drawable.ic_star_filled)
-                binding.tvImageStatus.text = "⭐ Estrella llena - ¡Te gusta!"
-                binding.tvImageStatus.setTextColor(resources.getColor(R.color.colorAccent))
-                Toast.makeText(context, "¡Estrella activada!", Toast.LENGTH_SHORT).show()
-            } else {
-                binding.ivClickable.setImageResource(R.drawable.ic_star_outline)
-                binding.tvImageStatus.text = "☆ Estrella vacía - Toca para llenar"
-                binding.tvImageStatus.setTextColor(resources.getColor(R.color.textSecondary))
-                Toast.makeText(context, "Estrella desactivada", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireActivity(), NewActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Botones de progreso
+        binding.btnStartProgress.setOnClickListener {
+            if (progressRunnable == null) {
+                startCircularProgress()
             }
         }
 
-        // ProgressBar circular - animación automática
-        startCircularProgress()
+        binding.btnStopProgress.setOnClickListener {
+            if (progressRunnable != null) {
+                stopCircularProgress()
+            }
+        }
 
-        // ProgressBar horizontal con controles
-        setupHorizontalProgressBar()
-
-        // TextView con información del estado global
-        updateGlobalStatus()
-
-        // Botón para actualizar información
+        // Botón de actualización
         binding.btnUpdateInfo.setOnClickListener {
             updateAllInformation()
-            Toast.makeText(context, "Información actualizada", Toast.LENGTH_SHORT).show()
         }
 
-        // Botón para reset de la imagen
-        binding.btnResetImage.setOnClickListener {
-            binding.ivClickable.setImageResource(R.drawable.ic_star_outline)
-            binding.tvImageStatus.text = "☆ Estrella vacía - Toca para llenar"
-            binding.tvImageStatus.setTextColor(resources.getColor(R.color.textSecondary))
-            Toast.makeText(context, "Imagen reseteada", Toast.LENGTH_SHORT).show()
+        // Botón para ir a la nueva actividad
+        binding.btnGoToNewActivity.setOnClickListener {
+            val intent = Intent(requireActivity(), NewActivity::class.java)
+            startActivity(intent)
         }
-    }
-
-    private fun setupHorizontalProgressBar() {
-        binding.progressHorizontal.max = 100
-        binding.progressHorizontal.progress = 0
-
-        binding.btnStartProgress.setOnClickListener {
-            startHorizontalProgress()
-        }
-
-        binding.btnResetProgress.setOnClickListener {
-            resetProgress()
-        }
-    }
-
-    private fun startHorizontalProgress() {
-        binding.btnStartProgress.isEnabled = false
-        currentProgress = 0
-
-        val handler = Handler(Looper.getMainLooper())
-        val runnable = object : Runnable {
-            override fun run() {
-                if (currentProgress <= 100) {
-                    binding.progressHorizontal.progress = currentProgress
-                    binding.tvProgressStatus.text = "Progreso: $currentProgress%"
-
-                    when {
-                        currentProgress < 30 -> {
-                            binding.tvProgressStatus.setTextColor(resources.getColor(R.color.colorPrimary))
-                        }
-                        currentProgress < 70 -> {
-                            binding.tvProgressStatus.setTextColor(resources.getColor(R.color.colorAccent))
-                        }
-                        else -> {
-                            binding.tvProgressStatus.setTextColor(resources.getColor(android.R.color.holo_green_dark))
-                        }
-                    }
-
-                    if (currentProgress == 100) {
-                        binding.btnStartProgress.isEnabled = true
-                        binding.tvProgressStatus.text = "¡Progreso completado! 🎉"
-                        Toast.makeText(context, "¡Proceso completado!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        currentProgress += 2
-                        handler.postDelayed(this, 50)
-                    }
-                }
-            }
-        }
-        handler.post(runnable)
-    }
-
-    private fun resetProgress() {
-        currentProgress = 0
-        binding.progressHorizontal.progress = 0
-        binding.tvProgressStatus.text = "Progreso: 0%"
-        binding.tvProgressStatus.setTextColor(resources.getColor(R.color.textSecondary))
-        binding.btnStartProgress.isEnabled = true
     }
 
     private fun startCircularProgress() {
         progressHandler = Handler(Looper.getMainLooper())
         progressRunnable = object : Runnable {
             override fun run() {
-                // Cambiar el texto cada 2 segundos
-                val messages = listOf(
-                    "Procesando datos...",
-                    "Conectando con servidor...",
-                    "Sincronizando información...",
-                    "Finalizando proceso..."
-                )
-                val currentText = binding.tvCircularStatus.text.toString()
-                val currentIndex = messages.indexOf(currentText)
-                val nextIndex = (currentIndex + 1) % messages.size
-                binding.tvCircularStatus.text = messages[nextIndex]
+                currentProgress = (currentProgress + 10) % 110 // Incrementa el progreso
+                binding.pbCircular.progress = currentProgress
+                binding.tvProgress.text = "Progreso: $currentProgress%"
 
-                progressHandler?.postDelayed(this, 2000)
+                if (currentProgress >= 100) {
+                    currentProgress = 0
+                    stopCircularProgress()
+                    Toast.makeText(requireContext(), "Progreso completado", Toast.LENGTH_SHORT).show()
+                } else {
+                    progressHandler?.postDelayed(this, 500) // Se repite cada 500ms
+                }
             }
         }
         progressHandler?.post(progressRunnable!!)
     }
 
+    private fun stopCircularProgress() {
+        progressHandler?.removeCallbacks(progressRunnable!!)
+        progressRunnable = null
+    }
+
     private fun updateSharedText() {
-        binding.tvSharedContent.text = MainActivity.sharedText
-        binding.tvDynamic.text = "Texto actual: ${MainActivity.sharedText}"
+        val newText = "Texto de Fragmento " + (0..100).random()
+        MainActivity.sharedText = newText
+        binding.tvDynamic.text = "Texto actual: $newText"
+        Toast.makeText(requireContext(), "Texto compartido actualizado", Toast.LENGTH_SHORT).show()
     }
 
     private fun updateGlobalStatus() {
@@ -217,7 +158,5 @@ class InfoFragment : Fragment() {
         super.onDestroyView()
         progressHandler?.removeCallbacks(progressRunnable!!)
         progressHandler = null
-        progressRunnable = null
-        _binding = null
     }
 }
